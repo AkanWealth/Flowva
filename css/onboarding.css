@@ -1,0 +1,223 @@
+/* Onboarding specific styles */
+.onboarding-card {
+  width: 100%;
+  min-height: 500px;
+}
+
+/* Step transitions */
+.step {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.step.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.step.active {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Radio and checkbox styles */
+.radio-group, 
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-container,
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1px solid var(--gray);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.radio-container:hover,
+.checkbox-container:hover {
+  border-color: var(--primary-light);
+  background-color: rgba(131, 69, 230, 0.05);
+}
+
+.radio-container input[type="radio"],
+.checkbox-container input[type="checkbox"] {
+  margin-right: 12px;
+  accent-color: var(--primary);
+  width: 20px;
+  height: 20px;
+}
+
+.radio-label,
+.checkbox-label {
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+/* Selected state */
+.radio-container.selected,
+.checkbox-container.selected {
+  border-color: var(--primary);
+  background-color: rgba(131, 69, 230, 0.1);
+}
+
+/* Tools grid */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tool-card {
+  border: 1px solid var(--gray);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tool-card:hover {
+  border-color: var(--primary-light);
+  background-color: rgba(131, 69, 230, 0.05);
+}
+
+.tool-card.selected {
+  border-color: var(--primary);
+  background-color: rgba(131, 69, 230, 0.1);
+}
+
+.tool-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gray-light);
+  border-radius: 12px;
+}
+
+.tool-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Toggle group */
+.toggle-group {
+  display: flex;
+  gap: 12px;
+}
+
+.toggle-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border: 1px solid var(--gray);
+  border-radius: var(--radius);
+  background-color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.toggle-btn .icon {
+  margin-right: 8px;
+}
+
+.toggle-btn.active {
+  border-color: var(--primary);
+  background-color: rgba(131, 69, 230, 0.1);
+  color: var(--primary);
+}
+
+/* Switch toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--gray);
+  transition: var(--transition);
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: var(--transition);
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Completion step */
+.completion {
+  text-align: center;
+  padding: 32px 0;
+}
+
+.check-circle {
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .tools-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .tool-icon {
+      width: 40px;
+      height: 40px;
+  }
+  
+  .tool-name {
+      font-size: 12px;
+  }
+}

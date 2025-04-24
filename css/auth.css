@@ -1,0 +1,107 @@
+/* Auth-specific styles */
+.auth-card {
+  width: 100%;
+}
+
+.auth-form {
+  margin-top: 24px;
+  padding: 20px;
+}
+
+/* Password input with toggle button */
+.password-input {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--gray);
+}
+
+.divider span {
+  padding: 0 12px;
+}
+
+/* Social sign-in button */
+.social-sign-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-sign-in img {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+/* Auth footer */
+.auth-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Password strength indicator */
+.password-strength {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.strength-bar {
+  height: 4px;
+  flex: 1;
+  background-color: var(--gray);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.strength-bar.active {
+  background-color: var(--error);
+}
+
+.strength-bar.active.medium {
+  background-color: #FFA000;
+}
+
+.strength-bar.active.strong {
+  background-color: #43A047;
+}
+
+.strength-text {
+  font-size: 12px;
+  margin-top: 4px;
+  color: var(--text-secondary);
+}
